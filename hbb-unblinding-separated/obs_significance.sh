@@ -18,8 +18,8 @@ pwd
 year=$1
 
 echo "VBF SIGNIFICANCE"
-combine -M Significance -m 125 --signif output/testModel${year}/model_combined.root--redefineSignalPOI rVBF  --verbose 9 --setParameters rVBF=1,rggF=1 --freezeParameters rggF
+combine -M Significance -m 125 --signif output/testModel${year}/model_combined.root --redefineSignalPOI rVBF  --verbose 9 --setParameters rVBF=1,rggF=1
 
 echo "GGF SIGNIFICANCE"
-combine -M Significance -m 125 --signif output/testModel${year}/model_combined.root --redefineSignalPOI rggF --verbose 9 --setParameters rVBF=1,rggF=1 --freezeParameters rVBF
+combine -M Significance -m 125 --signif output/testModel${year}/model_combined.root --redefineSignalPOI rggF --verbose 9 --setParameters rVBF=1,rggF=1
 
