@@ -34,11 +34,8 @@ def main():
     os.system('mkdir -p /eos/uscms'+outdir)
 
     tags = ['fit_batch',
-            #'obs_grid2d',
-            #'obs_mu_ggf',
-            #'obs_mu_vbf',
-            #'obs_shapes',
-            #'obs_significance'
+            'obs_shapes',
+            'obs_significance'
            ]
 
     for tag in tags:

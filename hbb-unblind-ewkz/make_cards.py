@@ -324,6 +324,7 @@ def ggfvbf_rhalphabet(tmpdir,
     scale_VBF = rl.NuisanceParameter('QCDscale_VBF', 'lnN')
     scale_VH = rl.NuisanceParameter('QCDscale_VH', 'lnN')
     scale_ttH = rl.NuisanceParameter('QCDscale_ttH', 'lnN')
+    scale_EWKZ = rl.NuisanceParameter('QCDscale_EWKZ', 'lnN')
 
     isr_ggF = rl.NuisanceParameter('UEPS_ISR_ggF', 'lnN')
     isr_VBF = rl.NuisanceParameter('UEPS_ISR_VBF', 'lnN')
@@ -659,6 +660,17 @@ def ggfvbf_rhalphabet(tmpdir,
                                 eff_do = shape_to_num(syst_do,nominal)
 
                                 sample.setParamEffect(sys_dict[sys], eff_up, eff_do)
+
+                        if sName in ['EWKZ','EWKZbb']:
+
+                            scale_up = get_template(sName, isPass, binindex+1, cat[:3]+'_', obs=msd, syst='scalevar_7ptUp')[0]
+                            scale_do = get_template(sName, isPass, binindex+1, cat[:3]+'_', obs=msd, syst='scalevar_7ptDown')[0]
+
+                            eff_scale_up = np.sum(scale_up)/np.sum(nominal)
+                            eff_scale_do = np.sum(scale_do)/np.sum(nominal)
+
+                            sample.setParamEffect(scale_VBF,eff_scale_up,eff_scale_do)
+
 
                         # QCD scale and PDF uncertainties on Higgs signal    
                         elif sName in ['ggF','VBF','WH','ZH','ggZH','ttH']:

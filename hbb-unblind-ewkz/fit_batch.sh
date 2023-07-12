@@ -20,6 +20,6 @@ year=$1
 modelfile=output/testModel${year}/model_combined.root
 
 # Do initial fit                                                                                          
-combine -M MultiDimFit --algo singles -d $modelfile -m 125 --setParameters rggF=1,rVBF=1 --robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy=0 --saveWorkspace
+combine -M MultiDimFit --algo singles -d $modelfile -m 125 --setParameters rggF=1,rVBF=1 --robustFit=1 --robustHesse=1 --cminDefaultMinimizerStrategy=0 --saveWorkspace --verbose 9
 
 
