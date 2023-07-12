@@ -1,1 +1,0 @@
-../obs_grid2d.sh
