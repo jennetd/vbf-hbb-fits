@@ -3,7 +3,7 @@ year=$1
 poi="rHbb"
 frozen="allConstrainedNuisances"
 
-npoints=1000
+npoints=100
 
 #combineTool.py output/testModel/model_combined.root -M MultiDimFit --algo grid --points ${npoints} --redefineSignalPOI ${poi} --job-mode condor --split-points 10 --task-name ${poi} -n ${poi}
 
